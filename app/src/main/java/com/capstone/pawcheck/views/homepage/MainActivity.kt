@@ -1,10 +1,7 @@
-package com.capstone.pawcheck
+package com.capstone.pawcheck.views.homepage
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.capstone.pawcheck.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
