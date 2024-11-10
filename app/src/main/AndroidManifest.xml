@@ -19,7 +19,7 @@
             android:name=".views.authentication.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".views.homepage.MainActivity"
+            android:name=".views.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
