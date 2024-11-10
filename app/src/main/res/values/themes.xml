@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.PawCheck" parent="Base.Theme.PawCheck" />
+
+    <!--Image Corner Round-->
+    <style name="ShapeAppearanceOverlay.RoundedImageView.8dp" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
 </resources>
