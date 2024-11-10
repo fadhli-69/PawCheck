@@ -9,6 +9,9 @@
     <string name="article_image_desc">Image of the article</string>
     <string name="article_title_desc">Title of the article</string>
     <string name="article_description_desc">Brief description of the article</string>
+    <string name="tema_artikel">Tema Artikel</string>
+    <string name="scan_your_pet">Scan Your Pet!</string>
+    <string name="scan_here">Scan Here</string>
 
 
 </resources>
