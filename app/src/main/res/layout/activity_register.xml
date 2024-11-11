@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- CardView for Email -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_email"
         android:layout_width="0dp"
         android:layout_height="56dp"
@@ -82,10 +82,10 @@
                 android:background="@android:color/transparent"
                 android:layout_marginStart="16dp" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- CardView for Create Username -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_create_username"
         android:layout_width="0dp"
         android:layout_height="56dp"
@@ -119,10 +119,10 @@
                 android:background="@android:color/transparent"
                 android:layout_marginStart="16dp" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- CardView for Create Password -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_create_password"
         android:layout_width="0dp"
         android:layout_height="56dp"
@@ -156,10 +156,10 @@
                 android:background="@android:color/transparent"
                 android:layout_marginStart="16dp" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- CardView for Confirm Password -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_confirm_password"
         android:layout_width="0dp"
         android:layout_height="56dp"
@@ -193,7 +193,7 @@
                 android:background="@android:color/transparent"
                 android:layout_marginStart="16dp" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_Sign_Up"
@@ -232,7 +232,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="48dp"
             android:layout_height="48dp"
             app:cardCornerRadius="8dp">
@@ -243,9 +243,9 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_google"
                 android:padding="8dp" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="32dp"
@@ -257,9 +257,9 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_apple"
                 android:padding="8dp" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="32dp"
@@ -271,7 +271,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_facebook"
                 android:padding="8dp" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 

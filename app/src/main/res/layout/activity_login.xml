@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@id/welcome_text"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_email"
         android:layout_width="0dp"
         android:layout_height="56dp"
@@ -90,9 +90,9 @@
                 android:layout_marginStart="16dp" />
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_password"
         android:layout_width="0dp"
         android:layout_height="56dp"
@@ -135,7 +135,7 @@
                 android:contentDescription="Toggle Password Visibility"/>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/tv_forget_password"
@@ -183,7 +183,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="48dp"
             android:layout_height="48dp"
             app:cardCornerRadius="8dp">
@@ -194,9 +194,9 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_google"
                 android:padding="8dp" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="32dp"
@@ -208,9 +208,9 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_apple"
                 android:padding="8dp" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="32dp"
@@ -222,7 +222,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_facebook"
                 android:padding="8dp" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
