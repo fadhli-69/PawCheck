@@ -13,6 +13,12 @@
         android:theme="@style/Theme.PawCheck"
         tools:targetApi="31">
         <activity
+            android:name=".views.result.ScanResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.homepage.ArticleActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.authentication.register.RegisterActivity"
             android:exported="false" />
         <activity
