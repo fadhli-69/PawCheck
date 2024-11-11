@@ -27,9 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:scaleType="centerCrop"
-                tools:srcCompat="@drawable/image_for_camera_button"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.RoundedImageView.8dp"
-                />
+                app:srcCompat="@drawable/camera_background"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.RoundedImageView.8dp" />
 
             <TextView
                 android:id="@+id/textAboveImage"
@@ -72,7 +71,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvScanImage" />
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/titleOne"
             android:layout_width="80dp"
             android:layout_height="30dp"
@@ -90,9 +89,9 @@
                 android:text="@string/tema_artikel"
                 android:textSize="10sp"
                 tools:ignore="SmallSp" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/titleTwo"
             android:layout_width="80dp"
             android:layout_height="30dp"
@@ -109,9 +108,9 @@
                 android:gravity="center"
                 android:text="Tema Artikel"
                 android:textSize="10sp" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/titleThree"
             android:layout_width="80dp"
             android:layout_height="30dp"
@@ -128,9 +127,9 @@
                 android:gravity="center"
                 android:text="Tema Artikel"
                 android:textSize="10sp" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/titleFour"
             android:layout_width="80dp"
             android:layout_height="30dp"
@@ -147,7 +146,7 @@
                 android:gravity="center"
                 android:text="Tema Artikel"
                 android:textSize="10sp" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
