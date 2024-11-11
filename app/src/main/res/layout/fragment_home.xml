@@ -27,9 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:scaleType="centerCrop"
-                tools:srcCompat="@drawable/image_for_camera_button"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.RoundedImageView.8dp"
-                />
+                app:srcCompat="@drawable/camera_background"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.RoundedImageView.8dp" />
 
             <TextView
                 android:id="@+id/textAboveImage"
