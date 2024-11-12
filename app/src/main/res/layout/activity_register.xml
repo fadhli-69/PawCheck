@@ -9,39 +9,39 @@
     android:padding="20dp"
     tools:context=".views.authentication.register.RegisterActivity">
 
-    <!-- Top bar -->
-    <LinearLayout
-        android:id="@+id/top_bar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageView
-            android:id="@+id/iv_back"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_back"
-            android:layout_marginTop="5dp"/>
-
-        <TextView
-            android:id="@+id/tv_register"
-            android:layout_width="wrap_content"
+        <!-- Top bar -->
+        <LinearLayout
+            android:id="@+id/top_bar"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Register"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_back"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/text_register"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     <TextView
         android:id="@+id/create_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Create your account"
+        android:text="@string/text_create_your_account"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/top_bar"
@@ -69,14 +69,14 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_email"
                 android:layout_marginStart="16dp"
-                android:contentDescription="email"/>
+                android:contentDescription="@string/icon_email"/>
 
             <EditText
                 android:id="@+id/et_email"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:padding="4dp"
                 android:inputType="textEmailAddress"
                 android:background="@android:color/transparent"
@@ -106,14 +106,14 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_account"
                 android:layout_marginStart="16dp"
-                android:contentDescription="username"/>
+                android:contentDescription="@string/icon_username"/>
 
             <EditText
                 android:id="@+id/et_create_username"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:hint="Create Username"
+                android:hint="@string/create_username"
                 android:padding="4dp"
                 android:inputType="text"
                 android:background="@android:color/transparent"
@@ -143,14 +143,14 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_password"
                 android:layout_marginStart="16dp"
-                android:contentDescription="create password"/>
+                android:contentDescription="@string/icon_create_password"/>
 
             <EditText
                 android:id="@+id/et_create_password"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:hint="Create Password"
+                android:hint="@string/create_password"
                 android:padding="4dp"
                 android:inputType="textPassword"
                 android:background="@android:color/transparent"
@@ -180,14 +180,14 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_password"
                 android:layout_marginStart="16dp"
-                android:contentDescription="confirm password"/>
+                android:contentDescription="@string/icon_confirm_password"/>
 
             <EditText
                 android:id="@+id/et_confirm_password"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:hint="Confirm Password"
+                android:hint="@string/confirm_password"
                 android:padding="4dp"
                 android:inputType="textPassword"
                 android:background="@android:color/transparent"
@@ -201,7 +201,7 @@
         android:layout_height="56dp"
         android:fontFamily="@font/poppins_bold"
         android:maxWidth="320dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up_button"
         android:textColor="@android:color/white"
         app:cornerRadius="16dp"
         android:layout_marginTop="32dp"
@@ -213,7 +213,7 @@
         android:id="@+id/tv_sign_option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Or Sign Up with"
+        android:text="@string/or_sign_up_with"
         android:layout_marginTop="24dp"
         android:gravity="center_horizontal"
         app:layout_constraintTop_toBottomOf="@id/btn_Sign_Up"
@@ -242,7 +242,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_google"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:contentDescription="@string/google_button"/>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -256,7 +257,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_apple"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:contentDescription="@string/apple_button"/>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -270,7 +272,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_facebook"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:contentDescription="@string/facebook_button"/>
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
@@ -289,7 +292,7 @@
             android:id="@+id/tv_have_an_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account?" />
+            android:text="@string/already_have_an_account" />
 
         <TextView
             android:id="@+id/tv_sign_in"
@@ -297,7 +300,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:textStyle="bold"
-            android:text="Sign In" />
+            android:text="@string/sign_in" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
