@@ -70,4 +70,8 @@ dependencies {
     //ViewPager2
     implementation(libs.androidx.viewpager2)
 
+    //Material Components
+    implementation (libs.material)
+
+
 }

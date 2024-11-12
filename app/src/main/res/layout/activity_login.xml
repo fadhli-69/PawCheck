@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Login"
+            android:text="@string/text_login"
             android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Welcome Back"
+        android:text="@string/text_welcome_back"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/top_bar"
@@ -49,7 +49,7 @@
         android:id="@+id/sign_in_to_your_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign in to your account"
+        android:text="@string/text_sign_in_to_your_account"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/welcome_text"
         app:layout_constraintStart_toStartOf="parent" />
@@ -75,14 +75,14 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_account"
                 android:layout_marginStart="16dp"
-                android:contentDescription="account"/>
+                android:contentDescription="@string/icon_account"/>
 
             <EditText
                 android:id="@+id/et_email"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:hint="Username or Email"
+                android:hint="@string/username_or_email"
                 android:padding="4dp"
                 android:autofillHints="username or email"
                 android:inputType="textEmailAddress"
@@ -113,14 +113,14 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_password"
                 android:layout_marginStart="16dp"
-                android:contentDescription="password"/>
+                android:contentDescription="@string/icon_password"/>
 
             <EditText
                 android:id="@+id/et_password"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:padding="4dp"
                 android:inputType="textPassword"
                 android:background="@android:color/transparent"
@@ -132,7 +132,7 @@
                 android:layout_height="24dp"
                 android:layout_marginEnd="16dp"
                 android:src="@drawable/ic_visibility"
-                android:contentDescription="Toggle Password Visibility"/>
+                android:contentDescription="@string/toggle_password_visibility"/>
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -142,7 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Forget Password?"
+        android:text="@string/forget_password"
         app:layout_constraintTop_toBottomOf="@id/cv_password"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -151,7 +151,7 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="32dp"
-        android:text="Login"
+        android:text="@string/btn_login"
         android:maxWidth="320dp"
         app:cornerRadius="16dp"
         android:fontFamily="@font/poppins_bold"
@@ -164,7 +164,7 @@
         android:id="@+id/tv_sign_option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Or Sign in with"
+        android:text="@string/or_sign_in_with"
         android:layout_marginTop="32dp"
         android:gravity="center_horizontal"
         app:layout_constraintTop_toBottomOf="@id/btn_login"
@@ -193,7 +193,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_google"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:contentDescription="@string/google_button"/>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -207,7 +208,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_apple"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:contentDescription="@string/apple_button"/>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -221,7 +223,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_facebook"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:contentDescription="@string/facebook_button"/>
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
@@ -239,7 +242,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have an account?" />
+            android:text="@string/don_t_have_an_account" />
 
         <TextView
             android:id="@+id/tv_sign_up"
@@ -247,7 +250,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:textStyle="bold"
-            android:text="Sign Up" />
+            android:text="@string/sign_up" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
