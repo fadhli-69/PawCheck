@@ -1,4 +1,7 @@
 package com.capstone.pawcheck.data.local.entity
 
-// Belom W Isi
-class DrugsEntity()
+import androidx.room.Entity
+
+//// Belom W Isi
+//@Entity
+//class DrugsEntity()

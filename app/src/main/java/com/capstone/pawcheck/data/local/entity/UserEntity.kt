@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "user")
 class UserEntity (
     @field:ColumnInfo(name = "email")
-    @field:androidx.room.PrimaryKey
+    @field:PrimaryKey
     val email: String,
 
     @field:ColumnInfo(name = "username")
@@ -22,7 +22,7 @@ class UserEntity (
     @field:ColumnInfo(name = "profilePict")
     val profilePict: String,
 
-    @field:ColumnInfo(name = "fullName")
+    @field:ColumnInfo(name = "isLogin")
     val isLogin: Boolean,
 
 )
