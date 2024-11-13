@@ -4,10 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.capstone.pawcheck.data.local.entity.DrugsEntity
+//import com.capstone.pawcheck.data.local.entity.DrugsEntity
 import com.capstone.pawcheck.data.local.entity.UserEntity
 
-@Database(entities = [UserEntity::class, DrugsEntity::class], version = 1, exportSchema = false)
+@Database(entities = [UserEntity::class], version = 1, exportSchema = false)
 abstract class PawCheckDatabase : RoomDatabase(){
     abstract fun userDao(): UserDao
     abstract fun drugsDao(): DrugsDao
