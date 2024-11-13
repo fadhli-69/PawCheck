@@ -1,4 +1,5 @@
 package com.capstone.pawcheck.data.local.room
 
-class DrugsDatabase {
+// Belom W Isi
+interface DrugsDao {
 }
