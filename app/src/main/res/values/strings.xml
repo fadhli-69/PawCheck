@@ -55,4 +55,10 @@
     <string name="treatment_recommendations">Treatment Recommendations</string>
 
 
+    <string name="drug_name">Medicine Name</string>
+    <string name="drug_description">Drugs Description</string>
+    <string name="search">Search</string>
+    <string name="deskripsi_produk">Deskripsi Produk</string>
+
+
 </resources>

@@ -106,8 +106,9 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Tema Artikel"
-                android:textSize="10sp" />
+                android:text="@string/tema_artikel"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -144,8 +145,9 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Tema Artikel"
-                android:textSize="10sp" />
+                android:text="@string/tema_artikel"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -156,7 +158,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/article_card" />
+            tools:listitem="@layout/card_article" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>
