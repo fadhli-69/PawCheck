@@ -28,7 +28,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.RoundedImageView.8dp"
             android:contentDescription="@string/article_image_desc"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@tools:sample/avatars"
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/tvArticleName"
