@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Warna gelap transparan untuk menutupi area di luar fokus -->
+    <item>
+        <color android:color="#80000000" /> <!-- Adjust opacity as needed -->
+    </item>
+
+    <!-- Transparan di tengah dengan garis siku -->
+    <item>
+        <shape android:shape="rectangle">
+            <size android:width="300dp" android:height="400dp" />
+            <solid android:color="#80000000" />
+            <stroke android:width="2dp" android:color="#FFFFFF" />
+        </shape>
+    </item>
+</layer-list>
