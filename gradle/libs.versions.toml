@@ -2,6 +2,7 @@
 agp = "8.7.2"
 cameraCamera2 = "1.4.0"
 cameraLifecycle = "1.4.0"
+circleimageview = "3.1.0"
 comGoogleDevtoolsKspGradlePlugin = "2.0.21-1.0.26"
 compiler = "4.15.1"
 glide = "4.16.0"
@@ -32,6 +33,7 @@ androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref =
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
+circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 com-google-devtools-ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "comGoogleDevtoolsKspGradlePlugin" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
