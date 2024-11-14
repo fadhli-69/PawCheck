@@ -1,5 +1,7 @@
 [versions]
 agp = "8.7.2"
+cameraCamera2 = "1.4.0"
+cameraLifecycle = "1.4.0"
 comGoogleDevtoolsKspGradlePlugin = "2.0.21-1.0.26"
 compiler = "4.15.1"
 glide = "4.16.0"
@@ -21,6 +23,10 @@ navigationFragmentKtx = "2.8.3"
 navigationUiKtx = "2.8.3"
 
 [libraries]
+androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "cameraCamera2" }
+androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "cameraLifecycle" }
+androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "cameraCamera2" }
+androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "cameraCamera2" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
