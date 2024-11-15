@@ -11,7 +11,7 @@
         android:id="@+id/backButton"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:contentDescription="Back"
+        android:contentDescription="@string/back"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,7 +20,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:text="@string/settings"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -32,7 +32,7 @@
         android:id="@+id/generalSection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="General"
+        android:text="@string/general"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -56,24 +56,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="10dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_bookmark"
-                    android:contentDescription="Bookmark Icon" />
+                    android:contentDescription="@string/bookmark_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Bookmarked"
+                    android:text="@string/bookmarked"
                     android:textColor="#000000"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -87,19 +89,21 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_logout"
-                    android:contentDescription="Log Out Icon" />
+                    android:contentDescription="@string/log_out_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Log Out"
+                    android:text="@string/log_out"
                     android:textColor="#000000"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -112,7 +116,7 @@
         android:id="@+id/themeSection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Theme"
+        android:text="@string/theme"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -137,21 +141,23 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:padding="8dp">
+            android:padding="12dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_dark_mode"
-                android:contentDescription="Dark Mode Icon" />
+                android:contentDescription="@string/dark_mode_icon"
+                android:layout_marginStart="10dp"/>
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switch_theme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Dark Mode"
-                android:textSize="16sp" />
+                android:text="@string/dark_mode"
+                android:textSize="16sp"
+                android:layout_marginEnd="15dp"/>
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

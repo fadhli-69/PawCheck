@@ -5,5 +5,7 @@
     <color name="primary">#41A447</color>
 
     <color name="search_card">#E7E7E7</color>
+    <color name="gallery_bg">#BDFDFF</color>
+
 
 </resources>
