@@ -1,7 +1,9 @@
 package com.capstone.pawcheck.views.camerapage
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,7 +20,9 @@ import androidx.fragment.app.Fragment
 import com.capstone.pawcheck.R
 import com.capstone.pawcheck.databinding.FragmentCameraBinding
 import com.capstone.pawcheck.views.MainActivity
+import com.capstone.pawcheck.views.result.ScanResultActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CameraFragment : Fragment() {
 
@@ -54,6 +58,11 @@ class CameraFragment : Fragment() {
             startCamera()
         } else {
             requestCameraPermission.launch(Manifest.permission.CAMERA)
+        }
+
+        val galleryButton = binding.root.findViewById<FloatingActionButton>(R.id.gallery_button)
+        galleryButton.setOnClickListener {
+            pickImageLauncher.launch("image/*")
         }
     }
 
@@ -97,6 +106,16 @@ class CameraFragment : Fragment() {
                 Log.e(TAG, "Camera provider is not available", e)
             }
         }, ContextCompat.getMainExecutor(requireContext()))
+    }
+
+    private val pickImageLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+        uri?.let {
+            val intent = Intent(requireContext(), ScanResultActivity::class.java)
+            intent.putExtra("image_uri", it.toString())
+            startActivity(intent)
+        } ?: run {
+            Toast.makeText(requireContext(), "No image selected", Toast.LENGTH_SHORT).show()
+        }
     }
 
     companion object {

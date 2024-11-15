@@ -20,8 +20,8 @@ retrofit = "2.11.0"
 roomRuntime = "2.6.1"
 roomKtx = "2.6.1"
 viewpager2 = "1.1.0"
-navigationFragmentKtx = "2.8.3"
-navigationUiKtx = "2.8.3"
+navigationFragmentKtx = "2.8.4"
+navigationUiKtx = "2.8.4"
 
 [libraries]
 androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "cameraCamera2" }
