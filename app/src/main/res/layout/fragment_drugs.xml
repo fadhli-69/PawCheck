@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.drugpage.DrugsFragment">
+    tools:context=".views.drugpage.DrugFragment">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cv_email"
+        android:id="@+id/cv_search"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/cv_search_LL"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
@@ -33,22 +34,20 @@
                 android:contentDescription="@string/icon_account"
                 android:src="@drawable/baseline_search_24" />
 
-            <EditText
-                android:id="@+id/et_email"
+            <TextView
+                android:id="@+id/search_bar"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:hint="@string/search"
-                android:inputType="text"
+                android:padding="8dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:padding="4dp"
                 android:textSize="20sp"
                 tools:ignore="TextFields" />
         </LinearLayout>
-
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -56,11 +55,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
         android:foregroundGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_email" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

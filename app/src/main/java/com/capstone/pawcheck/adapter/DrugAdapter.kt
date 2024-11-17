@@ -7,9 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.capstone.pawcheck.R
 import com.capstone.pawcheck.adapter.Drug
 
-class DrugsAdapter(private val drugList: List<Drug>) : RecyclerView.Adapter<DrugsAdapter.DrugViewHolder>() {
+class DrugsAdapter(private val drugList: MutableList<Drug>) : RecyclerView.Adapter<DrugsAdapter.DrugViewHolder>() {
 
-    // ViewHolder untuk item `Drug`
     class DrugViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.drugImage)
         val nameTextView: TextView = itemView.findViewById(R.id.tvDrugName)
@@ -24,7 +23,6 @@ class DrugsAdapter(private val drugList: List<Drug>) : RecyclerView.Adapter<Drug
     override fun onBindViewHolder(holder: DrugViewHolder, position: Int) {
         val drug = drugList[position]
 
-        // Set nama, deskripsi, dan gambar pada item
         holder.nameTextView.text = drug.name
         holder.descriptionTextView.text = drug.description
         holder.imageView.setImageResource(drug.imageResId)
@@ -32,5 +30,11 @@ class DrugsAdapter(private val drugList: List<Drug>) : RecyclerView.Adapter<Drug
 
     override fun getItemCount(): Int {
         return drugList.size
+    }
+
+    fun updateList(newDrugs: List<Drug>) {
+        drugList.clear() // Menghapus data lama
+        drugList.addAll(newDrugs) // Menambahkan data baru
+        notifyDataSetChanged() // Memberitahu adapter bahwa data telah berubah
     }
 }
