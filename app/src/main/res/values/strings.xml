@@ -72,6 +72,7 @@
     <string name="dark_mode_icon">Dark Mode Icon</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="open_galery">Open Galery</string>
+    <string name="no_result_found">No Result Found</string>
 
 
 </resources>

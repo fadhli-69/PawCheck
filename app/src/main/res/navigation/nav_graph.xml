@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_drugs"
-        android:name="com.capstone.pawcheck.views.drugpage.DrugsFragment"
+        android:name="com.capstone.pawcheck.views.drugpage.DrugFragment"
         android:label="Drugs"
         tools:layout="@layout/fragment_drugs" />
 
