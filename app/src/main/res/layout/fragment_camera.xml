@@ -10,6 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="52dp"
+        android:src="@drawable/ic_back_white"
+        app:layout_constraintEnd_toStartOf="@+id/titleText"
+        app:layout_constraintStart_toStartOf="@+id/viewFinder"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"

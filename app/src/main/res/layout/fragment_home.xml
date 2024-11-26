@@ -43,7 +43,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/buttonAboveImage"
+                android:id="@+id/btnCamFrag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="150dp"
