@@ -10,7 +10,6 @@ import com.capstone.pawcheck.data.local.entity.UserEntity
 @Database(entities = [UserEntity::class], version = 1, exportSchema = false)
 abstract class PawCheckDatabase : RoomDatabase(){
     abstract fun userDao(): UserDao
-    abstract fun drugsDao(): DrugsDao
 
     companion object {
         @Volatile
