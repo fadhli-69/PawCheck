@@ -17,6 +17,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.capstone.pawcheck.R
 import com.capstone.pawcheck.databinding.FragmentCameraBinding
 import com.capstone.pawcheck.views.MainActivity
@@ -60,9 +61,14 @@ class CameraFragment : Fragment() {
             requestCameraPermission.launch(Manifest.permission.CAMERA)
         }
 
-        val galleryButton = binding.root.findViewById<FloatingActionButton>(R.id.gallery_button)
+        val galleryButton = binding.galleryButton
         galleryButton.setOnClickListener {
             pickImageLauncher.launch("image/*")
+        }
+
+        val backButton = binding.ivBack
+        backButton.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 
