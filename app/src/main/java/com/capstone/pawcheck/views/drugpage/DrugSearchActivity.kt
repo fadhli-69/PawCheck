@@ -4,7 +4,9 @@ import DrugsAdapter
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.capstone.pawcheck.R
@@ -23,29 +25,39 @@ class DrugSearchActivity : AppCompatActivity() {
         binding = ActivityDrugSearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val drugsList = intent.getSerializableExtra("DRUGS_LIST") as? Array<Pair<String, String>>
-        drugsList?.forEach {
-            allDrugs.add(Drug(it.first, it.second, R.drawable.camera_background))
+        val drugsList = intent.getParcelableArrayListExtra<Drug>("DRUGS_LIST")
+        if (drugsList != null) {
+            allDrugs.addAll(drugsList)
         }
 
         drugAdapter = DrugsAdapter(mutableListOf())
         binding.drugSearchRecyclerView.apply {
-            layoutManager = GridLayoutManager(this@DrugSearchActivity, 2) // Grid dengan 2 kolom
+            layoutManager = GridLayoutManager(this@DrugSearchActivity, 2)
             adapter = drugAdapter
-            addItemDecoration(SpaceItemDecoration(20)) // Jarak antar item
+            addItemDecoration(SpaceItemDecoration(20))
         }
 
         binding.backButton.setOnClickListener {
             onBackPressed()
         }
 
-        binding.searchInput.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                filterDrugs(s.toString())
+        binding.searchInput.setOnEditorActionListener { _, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+                (event?.keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN)) {
+                val query = binding.searchInput.text.toString().trim()
+                if (query.isNotEmpty()) {
+                    filterDrugs(query)
+                } else {
+                    drugAdapter.updateList(emptyList())
+                    binding.drugSearchRecyclerView.visibility = View.GONE
+                    binding.placeholderText.visibility = View.VISIBLE
+                }
+                true
+            } else {
+                false
             }
-            override fun afterTextChanged(s: Editable?) {}
-        })
+        }
+
     }
 
     private fun filterDrugs(query: String) {

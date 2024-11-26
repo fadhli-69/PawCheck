@@ -41,7 +41,7 @@
         </LinearLayout>
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/tvScanResult"
+            android:id="@+id/tvDrugDetail"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:scaleType="centerCrop"
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="20dp"
             android:text="@string/drug_name"
             android:textColor="@color/black"
@@ -68,10 +68,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvScanResult" />
+            app:layout_constraintTop_toBottomOf="@+id/tvDrugDetail" />
 
         <TextView
-            android:id="@+id/deksripsiProduk"
+            android:id="@+id/deskripsi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -87,14 +87,15 @@
             app:layout_constraintTop_toBottomOf="@+id/tvDrugName" />
 
         <TextView
-            android:id="@+id/treatmentRecommendationsDescription"
+            android:id="@+id/deksripsiProduk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:text="@string/drug_description"
-            app:layout_constraintTop_toBottomOf="@+id/deksripsiProduk"
+            android:justificationMode="inter_word"
+            app:layout_constraintTop_toBottomOf="@+id/deskripsi"
             tools:layout_editor_absoluteX="0dp"
             android:fontFamily="@font/poppins_regular"/>
 
