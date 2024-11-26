@@ -38,7 +38,7 @@ class DrugSearchActivity : AppCompatActivity() {
         }
 
         binding.backButton.setOnClickListener {
-            onBackPressed()
+            finish()
         }
 
         binding.searchInput.setOnEditorActionListener { _, actionId, event ->
