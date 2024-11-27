@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".PawCheckApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,6 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PawCheck"
         tools:targetApi="31">
+
         <activity
             android:name=".views.drugpage.DrugSearchActivity"
             android:exported="false" />
@@ -33,7 +38,7 @@
             android:name=".views.authentication.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".views.MainActivity"
+            android:name=".views.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

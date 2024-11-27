@@ -20,10 +20,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.capstone.pawcheck.R
 import com.capstone.pawcheck.databinding.FragmentCameraBinding
-import com.capstone.pawcheck.views.MainActivity
+import com.capstone.pawcheck.views.main.MainActivity
 import com.capstone.pawcheck.views.result.ScanResultActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CameraFragment : Fragment() {
 

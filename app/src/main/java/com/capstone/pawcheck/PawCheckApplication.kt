@@ -1,4 +1,9 @@
 package com.capstone.pawcheck
 
-class PawCheckApplication {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class PawCheckApplication : Application() {
+        //sementara
 }

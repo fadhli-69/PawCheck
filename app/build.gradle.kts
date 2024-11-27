@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
     id("kotlin-parcelize")
-    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -42,45 +42,56 @@ android {
 }
 
 dependencies {
-
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
+    // Core Android Libraries
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 
-    //Retrofit
+    // Navigation
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    // ViewPager2
+    implementation(libs.androidx.viewpager2)
+
+    // Data Storage
+    implementation(libs.androidx.datastore.preferences)
+
+    // Lifecycle Components
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+
+    // Dependency Injection (Hilt)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    // Networking (Retrofit)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
 
-    // Room
+    // Database (Room)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
-    //Glide
+    // Image Loading (Glide)
     implementation(libs.glide)
     ksp(libs.compiler)
 
-    //ViewPager2
-    implementation(libs.androidx.viewpager2)
-
-    //Material Components
-    implementation (libs.material)
-
-    //CameraX
+    // CameraX
     implementation(libs.androidx.camera.core)
     implementation(libs.androidx.camera.camera2)
     implementation(libs.androidx.camera.lifecycle)
     implementation(libs.androidx.camera.view)
 
-    //circle Image
+    // UI Components
     implementation(libs.circleimageview)
 
+    // Testing Libraries
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }
