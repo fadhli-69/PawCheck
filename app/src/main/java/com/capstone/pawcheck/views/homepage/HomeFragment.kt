@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.capstone.pawcheck.R
 import com.capstone.pawcheck.databinding.FragmentCameraBinding
 import com.capstone.pawcheck.databinding.FragmentHomeBinding
@@ -24,11 +25,7 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.btnCamFrag.setOnClickListener {
-            val cameraFragment = CameraFragment()
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.nav_host_fragment, cameraFragment)
-                .addToBackStack(null)
-                .commit()
+            findNavController().navigate(R.id.action_homeFragment_to_cameraFragment)
         }
 
         return binding.root
