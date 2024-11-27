@@ -1,4 +1,4 @@
-package com.capstone.pawcheck.views
+package com.capstone.pawcheck.views.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
