@@ -10,16 +10,14 @@ class SpaceItemDecoration(private val space: Int) : RecyclerView.ItemDecoration(
         val spanCount = (parent.layoutManager as GridLayoutManager).spanCount
         val position = parent.getChildAdapterPosition(view)
 
-        // Menambahkan spasi kiri dan kanan
         if (position % spanCount != 0) {
-            outRect.left = space // Menambahkan jarak di kiri (untuk kolom selain yang pertama)
+            outRect.left = space
         }
-        outRect.right = space // Menambahkan jarak di kanan
+        outRect.right = space
 
-        // Menambahkan spasi atas dan bawah
         if (position < spanCount) {
-            outRect.top = space // Menambahkan jarak di atas untuk baris pertama
+            outRect.top = space
         }
-        outRect.bottom = space // Menambahkan jarak di bawah
+        outRect.bottom = space
     }
 }
