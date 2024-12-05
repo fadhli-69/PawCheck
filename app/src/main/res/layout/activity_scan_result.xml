@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Top bar -->
         <LinearLayout
             android:id="@+id/top_bar"
             android:layout_width="0dp"
@@ -45,16 +44,16 @@
             android:id="@+id/tvScanResult"
             android:layout_width="match_parent"
             android:layout_height="220dp"
-            android:scaleType="centerCrop"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:contentDescription="@string/article_image_desc"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/top_bar"
             app:shapeAppearance="?attr/shapeAppearanceSmallComponent"
-            app:srcCompat="@drawable/camera_background"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"/>
+            app:srcCompat="@drawable/camera_background" />
 
         <TextView
             android:id="@+id/diagnoses"
@@ -75,13 +74,13 @@
             android:id="@+id/tvDiagnosesDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/diagnoses_description"
             app:layout_constraintTop_toBottomOf="@+id/diagnoses"
-            tools:layout_editor_absoluteX="0dp"
-            android:fontFamily="@font/poppins_regular"/>
+            tools:layout_editor_absoluteX="0dp" />
 
         <TextView
             android:id="@+id/treatmentRecommendations"
@@ -103,13 +102,13 @@
             android:id="@+id/treatmentRecommendationsDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/diagnoses_description"
             app:layout_constraintTop_toBottomOf="@+id/treatmentRecommendations"
-            tools:layout_editor_absoluteX="0dp"
-            android:fontFamily="@font/poppins_regular"/>
+            tools:layout_editor_absoluteX="0dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
