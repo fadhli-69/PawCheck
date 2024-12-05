@@ -24,7 +24,7 @@
     <string name="toggle_password_visibility">Toggle Password Visibility</string>
     <string name="forget_password">Forget Password?</string>
     <string name="btn_login">Login</string>
-    <string name="or_sign_in_with">Or Sign in with</string>
+    <string name="or_login_with">Or Login with</string>
     <string name="google_button">Google Button</string>
     <string name="apple_button">Apple Button</string>
     <string name="facebook_button">Facebook Button</string>
@@ -37,8 +37,8 @@
     <string name="icon_email">email</string>
     <string name="email">Email</string>
     <string name="icon_username">username</string>
-    <string name="create_username">Create Username</string>
-    <string name="icon_create_password">create password</string>
+    <string name="create_name">Create Name</string>
+    <string name="icon_create_password">Create password</string>
     <string name="create_password">Create Password</string>
     <string name="icon_confirm_password">confirm password</string>
     <string name="confirm_password">Confirm Password</string>
@@ -73,6 +73,7 @@
     <string name="dark_mode">Dark Mode</string>
     <string name="open_galery">Open Galery</string>
     <string name="no_result_found">No Result Found</string>
+    <string name="create_email">Create Email</string>
 
 
 </resources>
