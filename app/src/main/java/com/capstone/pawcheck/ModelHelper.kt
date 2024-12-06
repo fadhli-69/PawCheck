@@ -2,19 +2,13 @@ package com.capstone.pawcheck
 
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.ImageFormat
-import android.graphics.Rect
-import android.graphics.YuvImage
 import android.os.SystemClock
 import android.util.Log
-import androidx.camera.core.ImageProxy
 import org.tensorflow.lite.DataType
-import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
-import org.tensorflow.lite.support.image.ops.ResizeOp
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
-import java.io.ByteArrayOutputStream
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
 
 class ModelHelper(
     private val context: Context,
@@ -78,27 +72,30 @@ class ModelHelper(
 
 
     private fun preprocessImage(bitmap: Bitmap): TensorImage {
-        val imageProcessor = ImageProcessor.Builder()
-            .add(ResizeOp(inputImageHeight, inputImageWidth, ResizeOp.ResizeMethod.NEAREST_NEIGHBOR))
-            .build()
+        val resizedBitmap = Bitmap.createScaledBitmap(bitmap, inputImageWidth, inputImageHeight, true)
+
+        val byteBuffer = ByteBuffer.allocateDirect(4 * inputImageWidth * inputImageHeight * 3)
+        byteBuffer.order(ByteOrder.nativeOrder())
+
+        val intValues = IntArray(inputImageWidth * inputImageHeight)
+        resizedBitmap.getPixels(intValues, 0, inputImageWidth, 0, 0, inputImageWidth, inputImageHeight)
+
+        for (pixel in intValues) {
+            byteBuffer.putFloat(((pixel shr 16) and 0xFF) / 255.0f)
+            byteBuffer.putFloat(((pixel shr 8) and 0xFF) / 255.0f)
+            byteBuffer.putFloat((pixel and 0xFF) / 255.0f)
+        }
+
+        val tensorBuffer = TensorBuffer.createFixedSize(
+            intArrayOf(1, inputImageWidth, inputImageHeight, 3), DataType.FLOAT32
+        )
+
+        tensorBuffer.loadBuffer(byteBuffer)
 
         val tensorImage = TensorImage(DataType.FLOAT32)
-        tensorImage.load(bitmap)
-        return imageProcessor.process(tensorImage)
-    }
+        tensorImage.load(tensorBuffer)
 
-    private fun toBitmap(image: ImageProxy): Bitmap {
-        val plane = image.planes[0]
-        val buffer = plane.buffer
-        val bytes = ByteArray(buffer.remaining())
-        buffer.get(bytes)
-
-        val yuvImage = YuvImage(bytes, ImageFormat.NV21, image.width, image.height, null)
-        val outStream = ByteArrayOutputStream()
-        yuvImage.compressToJpeg(Rect(0, 0, image.width, image.height), 100, outStream)
-        val byteArray = outStream.toByteArray()
-        image.close()
-        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+        return tensorImage
     }
 
 
