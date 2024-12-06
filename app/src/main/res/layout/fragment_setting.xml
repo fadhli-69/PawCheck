@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.setting.SettingFragment"
-    android:padding="20dp">
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/backButton"
@@ -14,7 +14,8 @@
         android:contentDescription="@string/back"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/title"
@@ -24,9 +25,10 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginStart="20dp"
         app:layout_constraintStart_toEndOf="@id/backButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/generalSection"
@@ -36,8 +38,7 @@
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
@@ -48,6 +49,7 @@
         android:padding="16dp"
         app:cardElevation="4dp"
         app:cardCornerRadius="16dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/generalSection">
@@ -56,46 +58,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginStart="6dp"
-                android:layout_marginEnd="10dp">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_bookmark"
-                    android:contentDescription="@string/bookmark_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="@string/bookmarked"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginVertical="8dp"
-                android:background="#DDDDDD" />
+                android:layout_marginEnd="10dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
+                android:paddingVertical="12dp">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:src="@drawable/ic_logout"
                     android:contentDescription="@string/log_out_icon" />
 
@@ -105,11 +88,10 @@
                     android:layout_marginStart="16dp"
                     android:text="@string/log_out"
                     android:textColor="#000000"
-                    android:textSize="16sp" />
+                    android:textSize="18sp"
+                    android:gravity="center_vertical" />
             </LinearLayout>
-
         </LinearLayout>
-
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
@@ -120,8 +102,7 @@
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvGeneral" />
 
@@ -132,6 +113,7 @@
         android:padding="20dp"
         app:cardElevation="4dp"
         app:cardCornerRadius="16dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/themeSection">
@@ -144,11 +126,11 @@
             android:padding="12dp">
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/ic_dark_mode"
                 android:contentDescription="@string/dark_mode_icon"
-                android:layout_marginStart="10dp"/>
+                android:layout_marginStart="10dp" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switch_theme"
@@ -157,9 +139,8 @@
                 android:layout_marginStart="16dp"
                 android:text="@string/dark_mode"
                 android:textSize="16sp"
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginEnd="15dp" />
         </LinearLayout>
-
     </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
