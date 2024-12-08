@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_account"
-        app:startIconDrawable="@drawable/ic_account"
+        app:startIconDrawable="@drawable/ic_person"
         android:alpha="0"
         tools:alpha="1">
 
