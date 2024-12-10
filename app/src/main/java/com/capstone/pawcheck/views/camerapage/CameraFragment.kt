@@ -131,12 +131,18 @@ class CameraFragment : Fragment() {
                     Toast.makeText(requireContext(), "Error: $error", Toast.LENGTH_SHORT).show()
                 }
 
-                override fun onResults(results: FloatArray, inferenceTime: Long, disease: String, diagnosis: String) {
-                    // Kirim hasil analisis ke ScanResultActivity
+                override fun onResults(
+                    results: FloatArray,
+                    inferenceTime: Long,
+                    disease: String,
+                    diagnosis: String,
+                    treatment: List<String>
+                ) {
                     val intent = Intent(requireContext(), ScanResultActivity::class.java).apply {
                         putExtra("image_uri", imageUri.toString())
                         putExtra("disease", disease)
                         putExtra("diagnosis", diagnosis)
+                        putStringArrayListExtra("treatment", ArrayList(treatment))
                     }
                     startActivity(intent)
                 }
@@ -146,6 +152,7 @@ class CameraFragment : Fragment() {
             Toast.makeText(requireContext(), "Error analyzing image: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
+
 
 
     companion object {
