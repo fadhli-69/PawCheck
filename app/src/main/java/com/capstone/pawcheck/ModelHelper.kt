@@ -62,14 +62,26 @@ class ModelHelper(
 
         val maxIndex = results.indices.maxByOrNull { results[it] } ?: -1
         if (maxIndex >= 0) {
-            val disease = LABELS[maxIndex]
-            val diagnosis = DIAGNOSES[maxIndex]
-            listener?.onResults(results, inferenceTime, disease, diagnosis)
+            val predictedScore = results[maxIndex] * 100
+            val disease: String
+            val diagnosis: String
+            val treatment: List<String>
+
+            if (predictedScore >= 75) {
+                disease = LABELS[maxIndex]
+                diagnosis = DIAGNOSES[maxIndex]
+                treatment = getTreatmentOptions(disease)
+            } else {
+                disease = "Undetected Disease"
+                diagnosis = DIAGNOSES[6]
+                treatment = listOf("No specific treatment. Please consult a veterinarian for further examination.")
+            }
+
+            listener?.onResults(results, inferenceTime, disease, diagnosis, treatment)
         } else {
             listener?.onError("Failed to classify the image.")
         }
     }
-
 
     private fun preprocessImage(bitmap: Bitmap): TensorImage {
         val resizedBitmap = Bitmap.createScaledBitmap(bitmap, inputImageWidth, inputImageHeight, true)
@@ -98,10 +110,45 @@ class ModelHelper(
         return tensorImage
     }
 
+    fun getTreatmentOptions(predictedClass: String): List<String> {
+        val treatment = mutableListOf<String>()
+        when (predictedClass) {
+            "Blepharitis" -> {
+                treatment.add("Warm compress to reduce the risk of recurrence.")
+                treatment.add("Trim the hair around the eyes to reduce fluid buildup.")
+                treatment.add("Use baby shampoo to remove dirt that may clog the meibomian gland openings.")
+            }
+            "Conjunctivitis" -> {
+                treatment.add("Use an eye cleaning solution to clean the area around the eyes from dirt and discharge.")
+                treatment.add("Avoid known allergens and use antihistamines if necessary.")
+                treatment.add("If conjunctivitis is caused by an underlying medical condition, treatment for that condition is also required.")
+            }
+            "Entropion" -> {
+                treatment.add("Accurate diagnosis is crucial to determine the severity of entropion.")
+                treatment.add("Before surgery, eye drops may be prescribed to reduce irritation.")
+                treatment.add("Surgery is usually the most effective treatment for entropion.")
+            }
+            "Eyelid Lump" -> {
+                treatment.add("A thorough examination to determine whether the lump is benign or malignant is essential.")
+                treatment.add("If caused by an infection, antibiotics or anti-inflammatory medications may be prescribed.")
+                treatment.add("Surgery may be required to remove the lump, especially if it's cancerous or affecting vision.")
+            }
+            "Nuclear Sclerosis" -> {
+                treatment.add("Monitor the dog's eye condition regularly for changes in vision.")
+                treatment.add("If cataracts develop, surgery may be needed to remove them.")
+            }
+            "Pigmented Keratitis" -> {
+                treatment.add("Use artificial tears to keep the cornea moist.")
+                treatment.add("Steroids or NSAIDs may help reduce inflammation.")
+                treatment.add("Address underlying conditions like dry eye to prevent further damage.")
+            }
+        }
+        return treatment
+    }
 
     interface ClassifierListener {
         fun onError(error: String)
-        fun onResults(results: FloatArray, inferenceTime: Long, disease: String, diagnosis: String)
+        fun onResults(results: FloatArray, inferenceTime: Long, disease: String, diagnosis: String, treatment: List<String>)
     }
 
     companion object {
@@ -113,7 +160,7 @@ class ModelHelper(
             "Entropion",
             "Eyelid Lump",
             "Nuclear Sclerosis",
-            "Pigmented Keratitis"
+            "Pigmented Keratitis",
         )
 
         val DIAGNOSES = listOf(
@@ -123,7 +170,7 @@ class ModelHelper(
             "An eyelid lump is an abnormal growth in the dog's eyelid area. The lump could be benign or malignant, and depending on the type, treatment can vary.",
             "Nuclear Sclerosis is a normal aging process in dogs where the lens of the eye becomes cloudy. It doesn't impair vision as much as cataracts but should be monitored.",
             "Pigmented Keratitis is a condition where pigment accumulates on the cornea, potentially leading to vision issues. It often occurs alongside other conditions like dry eye.",
-            "The accuracy of the prediction is below 65%, so we are unable to display the detected disease. For now, we can only detect 6 diseases. If your dog shows unusual symptoms, please consult a veterinarian directly for a proper diagnosis."
+            "The accuracy of the prediction is below 75%, so we are unable to display the detected disease. For now, we can only detect 6 diseases. If your dog shows unusual symptoms, please consult a veterinarian directly for a proper diagnosis."
         )
 
 

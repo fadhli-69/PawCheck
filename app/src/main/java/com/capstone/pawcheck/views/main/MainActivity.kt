@@ -1,5 +1,6 @@
 package com.capstone.pawcheck.views.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -8,6 +9,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.capstone.pawcheck.R
 import com.capstone.pawcheck.data.preferences.SettingPreferences
 import com.capstone.pawcheck.databinding.ActivityMainBinding
+import com.capstone.pawcheck.views.homepage.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.runBlocking
 
@@ -37,6 +39,30 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         binding.navView.setupWithNavController(navController)
+
+        val navigateTo = intent.getStringExtra("navigate_to")
+        if (navigateTo == "home") {
+            val navHostFragment =
+                supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+            val navController = navHostFragment.navController
+            navController.popBackStack(R.id.navigation_home, false)
+            navController.navigate(R.id.navigation_home)
+        }
+
     }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        val navigateTo = intent.getStringExtra("navigate_to")
+        if (navigateTo == "home") {
+            val navHostFragment =
+                supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+            val navController = navHostFragment.navController
+            navController.popBackStack(R.id.navigation_home, false)
+            navController.navigate(R.id.navigation_home)
+        }
+    }
+
+
 }
 

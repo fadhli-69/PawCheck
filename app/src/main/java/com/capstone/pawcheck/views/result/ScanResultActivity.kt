@@ -1,14 +1,12 @@
 package com.capstone.pawcheck.views.result
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.capstone.pawcheck.ModelHelper
 import com.capstone.pawcheck.databinding.ActivityScanResultBinding
-import androidx.camera.core.ImageProxy
+import com.capstone.pawcheck.views.main.MainActivity
 
 class ScanResultActivity : AppCompatActivity() {
 
@@ -22,14 +20,40 @@ class ScanResultActivity : AppCompatActivity() {
         val imageUriString = intent.getStringExtra("image_uri")
         val disease = intent.getStringExtra("disease")
         val diagnosis = intent.getStringExtra("diagnosis")
+        val treatment = intent.getStringArrayListExtra("treatment")
 
-        if (imageUriString != null) {
-            val imageUri = Uri.parse(imageUriString)
+        // Set Image
+        imageUriString?.let {
+            val imageUri = Uri.parse(it)
             binding.tvScanResult.setImageURI(imageUri)
         }
 
+        // Set Diagnoses
         binding.diagnoses.text = disease ?: "Unknown"
         binding.tvDiagnosesDescription.text = diagnosis ?: "No diagnosis available."
+
+        // Set Treatment Recommendations
+        if (treatment != null && treatment.isNotEmpty()) {
+            val treatmentText = treatment.joinToString(separator = "\n") { "- $it" }
+            binding.treatmentRecommendationsDescription.text = treatmentText
+        } else {
+            binding.treatmentRecommendationsDescription.text = "No treatment recommendations available."
+        }
+
+        // Back Button
+        binding.ivBack.setOnClickListener {
+            onBackPressed()
+            finish()
+        }
+
+        // Home Button
+        binding.actionHome.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                putExtra("navigate_to", "home")
+            }
+            startActivity(intent)
+            finish()
+        }
     }
 }
-

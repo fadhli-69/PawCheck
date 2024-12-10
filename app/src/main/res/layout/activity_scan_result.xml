@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- Top bar -->
         <LinearLayout
             android:id="@+id/top_bar"
             android:layout_width="0dp"
@@ -43,17 +44,17 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/tvScanResult"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:contentDescription="@string/article_image_desc"
+            android:layout_height="300dp"
             android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/article_image_desc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/top_bar"
             app:shapeAppearance="?attr/shapeAppearanceSmallComponent"
-            app:srcCompat="@drawable/camera_background" />
+            app:srcCompat="@drawable/camera_background"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
 
         <TextView
             android:id="@+id/diagnoses"
@@ -74,13 +75,14 @@
             android:id="@+id/tvDiagnosesDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:fontFamily="@font/poppins_regular"
             android:text="@string/diagnoses_description"
+
             app:layout_constraintTop_toBottomOf="@+id/diagnoses"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteX="0dp"
+            android:fontFamily="@font/poppins_regular"/>
 
         <TextView
             android:id="@+id/treatmentRecommendations"
@@ -102,13 +104,46 @@
             android:id="@+id/treatmentRecommendationsDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/treatement_recomendation"
+            app:layout_constraintTop_toBottomOf="@+id/treatmentRecommendations"
+            tools:layout_editor_absoluteX="0dp"
+            android:fontFamily="@font/poppins_regular"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/poppins_regular"
-            android:text="@string/diagnoses_description"
-            app:layout_constraintTop_toBottomOf="@+id/treatmentRecommendations"
-            tools:layout_editor_absoluteX="0dp" />
+            android:text="@string/note"
+            android:justificationMode="inter_word"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/treatmentRecommendationsDescription" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/action_home"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:maxWidth="320dp"
+            android:text="@string/back_to_home"
+            android:textColor="@android:color/white"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
