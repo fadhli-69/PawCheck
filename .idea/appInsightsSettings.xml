@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.capstone.pawcheck" />
+                  <option name="mobileSdkAppId" value="1:575687325847:android:953b19ec149f0bd14f91d2" />
+                  <option name="projectId" value="pawcheck-3a68e" />
+                  <option name="projectNumber" value="575687325847" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -18,7 +18,7 @@ class DrugsAdapter(private val drugList: MutableList<Drug>) : RecyclerView.Adapt
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrugViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_drug, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_drug, parent, false)
         return DrugViewHolder(view)
     }
 

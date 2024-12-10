@@ -24,7 +24,7 @@
     <string name="toggle_password_visibility">Toggle Password Visibility</string>
     <string name="forget_password">Forget Password?</string>
     <string name="btn_login">Login</string>
-    <string name="or_sign_in_with">Or Sign in with</string>
+    <string name="or_login_with">Or Login with</string>
     <string name="google_button">Google Button</string>
     <string name="apple_button">Apple Button</string>
     <string name="facebook_button">Facebook Button</string>
@@ -37,8 +37,8 @@
     <string name="icon_email">email</string>
     <string name="email">Email</string>
     <string name="icon_username">username</string>
-    <string name="create_username">Create Username</string>
-    <string name="icon_create_password">create password</string>
+    <string name="create_name">Create Name</string>
+    <string name="icon_create_password">Create password</string>
     <string name="create_password">Create Password</string>
     <string name="icon_confirm_password">confirm password</string>
     <string name="confirm_password">Confirm Password</string>
@@ -73,7 +73,27 @@
     <string name="dark_mode">Dark Mode</string>
     <string name="open_galery">Open Galery</string>
     <string name="no_result_found">No Result Found</string>
+    <string name="create_email">Create Email</string>
+    <string name="title_welcome_page">Selamat Datang di Pawcheck</string>
+    <string name="signup">Sign Up</string>
+    <string name="message_welcome_page">Mari jaga kesehatan anabul Anda bersama kami!</string>
+    <string name="unknown_error">An unexpected error occurred</string>
+    <string name="email_required">Email is required</string>
+    <string name="invalid_email">Invalid email format</string>
+    <string name="password_required">Password is required</string>
+    <string name="registration_successful">Registration Successful</string>
+    <string name="login_credentials_message">You can now log in with your credentials.</string>
+    <string name="registration_failed">Registration failed</string>
+    <string name="ok">OK</string>
+    <string name="success_login_default">Login berhasil</string>
+    <string name="error_login_failed">Login gagal. Silakan coba lagi.</string>
 
+    <string name="unknown_user">Unknown User</string>
+    <string name="logout_title">Logout</string>
+    <string name="logout_message">Are you sure you want to log out?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="Mulai">Mulai</string>
     <string name="image_classifier_failed">Image classifier failed to initialize. See error logs for details</string>
     <string name="back_to_home">Back to Home</string>
     <string name="note">Note: Visit your nearest veterinarian for maximum treatment.</string>
