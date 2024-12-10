@@ -26,7 +26,7 @@ class SettingPreferences @Inject constructor(
     }
 
     val themeFlow: Flow<Boolean> = dataStore.data.map { preferences ->
-        preferences[THEME_KEY] ?: false  // Defaultkan ke light mode
+        preferences[THEME_KEY] ?: false
     }
 
     suspend fun saveThemeSetting(isDarkMode: Boolean) {
@@ -38,4 +38,5 @@ class SettingPreferences @Inject constructor(
         val preferences = dataStore.data.first()
         return preferences[THEME_KEY] ?: false
     }
+
 }

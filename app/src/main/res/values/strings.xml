@@ -74,6 +74,24 @@
     <string name="open_galery">Open Galery</string>
     <string name="no_result_found">No Result Found</string>
     <string name="create_email">Create Email</string>
+    <string name="title_welcome_page">Selamat Datang di Pawcheck</string>
+    <string name="signup">Sign Up</string>
+    <string name="message_welcome_page">Mari jaga kesehatan anabul Anda bersama kami!</string>
+    <string name="unknown_error">An unexpected error occurred</string>
+    <string name="email_required">Email is required</string>
+    <string name="invalid_email">Invalid email format</string>
+    <string name="password_required">Password is required</string>
+    <string name="registration_successful">Registration Successful</string>
+    <string name="login_credentials_message">You can now log in with your credentials.</string>
+    <string name="registration_failed">Registration failed</string>
+    <string name="ok">OK</string>
+    <string name="success_login_default">Login berhasil</string>
+    <string name="error_login_failed">Login gagal. Silakan coba lagi.</string>
 
-
+    <string name="unknown_user">Unknown User</string>
+    <string name="logout_title">Logout</string>
+    <string name="logout_message">Are you sure you want to log out?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="Mulai">Mulai</string>
 </resources>
