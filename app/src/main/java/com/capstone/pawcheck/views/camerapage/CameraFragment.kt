@@ -3,6 +3,7 @@ package com.capstone.pawcheck.views.camerapage
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,7 @@ import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.capstone.pawcheck.ModelHelper
 import com.capstone.pawcheck.R
 import com.capstone.pawcheck.databinding.FragmentCameraBinding
 import com.capstone.pawcheck.views.main.MainActivity
@@ -115,13 +117,36 @@ class CameraFragment : Fragment() {
 
     private val pickImageLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
         uri?.let {
-            val intent = Intent(requireContext(), ScanResultActivity::class.java)
-            intent.putExtra("image_uri", it.toString())
-            startActivity(intent)
+            analyzeImage(it)
         } ?: run {
             Toast.makeText(requireContext(), "No image selected", Toast.LENGTH_SHORT).show()
         }
     }
+
+    private fun analyzeImage(imageUri: Uri) {
+        try {
+            val bitmap = BitmapFactory.decodeStream(requireContext().contentResolver.openInputStream(imageUri))
+            val modelHelper = ModelHelper(requireContext(), object : ModelHelper.ClassifierListener {
+                override fun onError(error: String) {
+                    Toast.makeText(requireContext(), "Error: $error", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onResults(results: FloatArray, inferenceTime: Long, disease: String, diagnosis: String) {
+                    // Kirim hasil analisis ke ScanResultActivity
+                    val intent = Intent(requireContext(), ScanResultActivity::class.java).apply {
+                        putExtra("image_uri", imageUri.toString())
+                        putExtra("disease", disease)
+                        putExtra("diagnosis", diagnosis)
+                    }
+                    startActivity(intent)
+                }
+            })
+            modelHelper.classifyImage(bitmap)
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "Error analyzing image: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     companion object {
         private const val TAG = "CameraFragment"

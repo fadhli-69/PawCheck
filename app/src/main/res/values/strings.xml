@@ -94,4 +94,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="Mulai">Mulai</string>
+    <string name="image_classifier_failed">Image classifier failed to initialize. See error logs for details</string>
+
+
 </resources>
