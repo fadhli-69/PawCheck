@@ -5,6 +5,7 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -18,7 +19,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PawCheck"
         tools:targetApi="31">
-
+        <activity
+            android:name=".views.authentication.welcome.WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".views.drugpage.DrugSearchActivity"
             android:exported="false" />
@@ -39,13 +47,7 @@
             android:exported="false" />
         <activity
             android:name=".views.main.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
