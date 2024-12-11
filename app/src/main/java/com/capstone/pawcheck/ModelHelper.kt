@@ -114,33 +114,33 @@ class ModelHelper(
         val treatment = mutableListOf<String>()
         when (predictedClass) {
             "Blepharitis" -> {
-                treatment.add("Warm compress to reduce the risk of recurrence.")
-                treatment.add("Trim the hair around the eyes to reduce fluid buildup.")
-                treatment.add("Use baby shampoo to remove dirt that may clog the meibomian gland openings.")
+                treatment.add("Kompres hangat untuk mengurangi risiko kekambuhan.")
+                treatment.add("Pangkas rambut di sekitar mata untuk mengurangi penumpukan cairan.")
+                treatment.add("Gunakan sampo bayi untuk menghilangkan kotoran yang dapat menyumbat lubang kelenjar meibom.")
             }
             "Conjunctivitis" -> {
-                treatment.add("Use an eye cleaning solution to clean the area around the eyes from dirt and discharge.")
-                treatment.add("Avoid known allergens and use antihistamines if necessary.")
-                treatment.add("If conjunctivitis is caused by an underlying medical condition, treatment for that condition is also required.")
+                treatment.add("Gunakan larutan pembersih mata untuk membersihkan area di sekitar mata dari kotoran dan kotoran.")
+                treatment.add("Hindari alergen yang diketahui dan gunakan antihistamin jika perlu.")
+                treatment.add("Jika konjungtivitis disebabkan oleh kondisi medis yang mendasari, pengobatan untuk kondisi tersebut juga diperlukan.")
             }
             "Entropion" -> {
-                treatment.add("Accurate diagnosis is crucial to determine the severity of entropion.")
-                treatment.add("Before surgery, eye drops may be prescribed to reduce irritation.")
-                treatment.add("Surgery is usually the most effective treatment for entropion.")
+                treatment.add("Diagnosis yang akurat sangat penting untuk menentukan tingkat keparahan entropion.")
+                treatment.add("Sebelum operasi, obat tetes mata dapat diresepkan untuk mengurangi iritasi.")
+                treatment.add("Pembedahan biasanya merupakan pengobatan yang paling efektif untuk entropion.")
             }
             "Eyelid Lump" -> {
-                treatment.add("A thorough examination to determine whether the lump is benign or malignant is essential.")
-                treatment.add("If caused by an infection, antibiotics or anti-inflammatory medications may be prescribed.")
-                treatment.add("Surgery may be required to remove the lump, especially if it's cancerous or affecting vision.")
+                treatment.add("Pemeriksaan menyeluruh untuk menentukan apakah benjolan tersebut jinak atau ganas sangat penting.")
+                treatment.add("Jika disebabkan oleh infeksi, antibiotik atau obat antiinflamasi dapat diresepkan.")
+                treatment.add("Pembedahan mungkin diperlukan untuk mengangkat benjolan, terutama jika benjolan tersebut bersifat kanker atau memengaruhi penglihatan.")
             }
             "Nuclear Sclerosis" -> {
-                treatment.add("Monitor the dog's eye condition regularly for changes in vision.")
-                treatment.add("If cataracts develop, surgery may be needed to remove them.")
+                treatment.add("Pantau kondisi mata anjing secara teratur untuk mengetahui adanya perubahan pada penglihatannya.")
+                treatment.add("Jika katarak berkembang, pembedahan mungkin diperlukan untuk mengangkatnya.")
             }
             "Pigmented Keratitis" -> {
-                treatment.add("Use artificial tears to keep the cornea moist.")
-                treatment.add("Steroids or NSAIDs may help reduce inflammation.")
-                treatment.add("Address underlying conditions like dry eye to prevent further damage.")
+                treatment.add("Gunakan air mata buatan untuk menjaga kelembapan kornea.")
+                treatment.add("Steroid atau NSAID dapat membantu mengurangi peradangan.")
+                treatment.add("Atasi kondisi yang mendasari seperti mata kering untuk mencegah kerusakan lebih lanjut.")
             }
         }
         return treatment
@@ -164,13 +164,13 @@ class ModelHelper(
         )
 
         val DIAGNOSES = listOf(
-            "Blepharitis is an inflammation of the eyelids that can affect one or both eyelids of a dog. Common symptoms include redness, swelling, itching, and discharge from the eye area. Blepharitis can cause discomfort and may affect the dog's quality of life if left untreated.",
-            "Conjunctivitis is an inflammation of the conjunctiva, which is the thin tissue lining the front of the eyeball and the inside of the eyelids. In dogs, conjunctivitis can cause redness, swelling, discharge from the eyes, and discomfort.",
-            "Entropion is a condition where the eyelid folds inward, causing irritation to the eye. It can lead to inflammation, discomfort, and potentially damage to the cornea if untreated.",
-            "An eyelid lump is an abnormal growth in the dog's eyelid area. The lump could be benign or malignant, and depending on the type, treatment can vary.",
-            "Nuclear Sclerosis is a normal aging process in dogs where the lens of the eye becomes cloudy. It doesn't impair vision as much as cataracts but should be monitored.",
-            "Pigmented Keratitis is a condition where pigment accumulates on the cornea, potentially leading to vision issues. It often occurs alongside other conditions like dry eye.",
-            "The accuracy of the prediction is below 75%, so we are unable to display the detected disease. For now, we can only detect 6 diseases. If your dog shows unusual symptoms, please consult a veterinarian directly for a proper diagnosis."
+            "Blepharitis adalah peradangan pada kelopak mata yang dapat mempengaruhi salah satu atau kedua kelopak mata anjing. Gejala yang umum terjadi adalah kemerahan, bengkak, gatal, dan keluarnya cairan dari area mata. Blepharitis dapat menyebabkan ketidaknyamanan dan dapat memengaruhi kualitas hidup anjing jika tidak ditangani.",
+            "Konjungtivitis adalah peradangan pada konjungtiva, yaitu jaringan tipis yang melapisi bagian depan bola mata dan bagian dalam kelopak mata. Pada anjing, konjungtivitis dapat menyebabkan kemerahan, bengkak, keluarnya cairan dari mata, dan rasa tidak nyaman.",
+            "Entropion adalah suatu kondisi di mana kelopak mata terlipat ke dalam, menyebabkan iritasi pada mata. Kondisi ini dapat menyebabkan peradangan, ketidaknyamanan, dan berpotensi merusak kornea jika tidak ditangani.",
+            "Benjolan kelopak mata adalah pertumbuhan abnormal pada area kelopak mata anjing. Benjolan ini bisa jinak atau ganas, dan tergantung dari jenisnya, pengobatannya bisa berbeda-beda.",
+            "Nuclear Sclerosis adalah proses penuaan yang normal pada anjing di mana lensa mata menjadi keruh. Kondisi ini tidak mengganggu penglihatan seperti halnya katarak, namun harus tetap dipantau.",
+            "Keratitis berpigmen adalah suatu kondisi di mana pigmen terakumulasi pada kornea, yang berpotensi menyebabkan masalah penglihatan. Kondisi ini sering terjadi bersamaan dengan kondisi lain seperti mata kering.",
+            "Keakuratan prediksi di bawah 75%, sehingga kami tidak dapat menampilkan penyakit yang terdeteksi. Untuk saat ini, kami hanya dapat mendeteksi 6 penyakit. Jika anjing Anda menunjukkan gejala yang tidak biasa, silakan berkonsultasi dengan dokter hewan secara langsung untuk mendapatkan diagnosis yang tepat."
         )
 
 
