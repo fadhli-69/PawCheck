@@ -3,15 +3,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--String for Home Page-->
-    <string name="new_article">New Article</string>
+    <string name="new_article">Artikel Terbaru</string>
     <string name="article_name">Article Name</string>
     <string name="article_description">Article Description</string>
     <string name="article_image_desc">Image of the article</string>
     <string name="article_title_desc">Title of the article</string>
     <string name="article_description_desc">Brief description of the article</string>
     <string name="tema_artikel">Tema Artikel</string>
-    <string name="scan_your_pet">Scan Your Pet!</string>
-    <string name="scan_here">Scan Here</string>
+    <string name="scan_your_pet">Periksa Hewan Kamu!</string>
+    <string name="scan_here">Pindai Disini</string>
 
     <!--String for Login Page-->
     <string name="text_login">Login</string>
@@ -49,10 +49,10 @@
 
     <!--String for Scan Result Page-->
     <string name="post_date">Post Date</string>
-    <string name="scan_result">Scan Result</string>
-    <string name="diagnoses">Diagnoses</string>
+    <string name="scan_result">Hasil Pemindaian</string>
+    <string name="diagnoses">Diagnosa</string>
     <string name="diagnoses_description">Diagnoses Description</string>
-    <string name="treatment_recommendations">Treatment Recommendations</string>
+    <string name="treatment_recommendations">Rekomendasi Pengobatan</string>
 
 
     <string name="drug_name">Medicine Name</string>
@@ -95,9 +95,12 @@
     <string name="no">No</string>
     <string name="Mulai">Mulai</string>
     <string name="image_classifier_failed">Image classifier failed to initialize. See error logs for details</string>
-    <string name="back_to_home">Back to Home</string>
-    <string name="note">Note: Visit your nearest veterinarian for maximum treatment.</string>
+    <string name="back_to_home">Tampilan Utama</string>
+    <string name="note">Catatan: Kunjungi dokter hewan terdekat untuk mendapatkan perawatan yang maksimal.</string>
     <string name="treatement_recomendation">Treatement Recomendation</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="setting_button">Setting button</string>
+    <string name="username">Username</string>
 
 
 </resources>
