@@ -101,6 +101,7 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="setting_button">Setting button</string>
     <string name="username">Username</string>
+    <string name="search_icon">Search Icon</string>
 
 
 </resources>
