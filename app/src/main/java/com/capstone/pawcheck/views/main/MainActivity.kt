@@ -1,68 +1,80 @@
 package com.capstone.pawcheck.views.main
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.capstone.pawcheck.R
 import com.capstone.pawcheck.data.preferences.SettingPreferences
 import com.capstone.pawcheck.databinding.ActivityMainBinding
-import com.capstone.pawcheck.views.homepage.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val settingPreferences = SettingPreferences(this)
+        super.onCreate(savedInstanceState)
 
+        // Atur tema aplikasi berdasarkan preferensi
+        val settingPreferences = SettingPreferences(this)
         val isDarkMode = runBlocking {
             settingPreferences.getThemeSetting()
         }
+        AppCompatDelegate.setDefaultNightMode(
+            if (isDarkMode) AppCompatDelegate.MODE_NIGHT_YES
+            else AppCompatDelegate.MODE_NIGHT_NO
+        )
 
-        if (isDarkMode) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-
-        super.onCreate(savedInstanceState)
-
+        // Inisialisasi binding dan navigasi
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        binding.navView.setupWithNavController(navController)
+        navController = navHostFragment.navController
 
-        val navigateTo = intent.getStringExtra("navigate_to")
-        if (navigateTo == "home") {
-            val navHostFragment =
-                supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-            val navController = navHostFragment.navController
-            navController.popBackStack(R.id.navigation_home, false)
-            navController.navigate(R.id.navigation_home)
-        }
-
+        // Setup BottomNavigationView
+        setupBottomNavigationView()
     }
 
-    override fun onNewIntent(intent: Intent) {
+    private fun setupBottomNavigationView() {
+        binding.navView.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_home -> {
+                    navController.popBackStack(R.id.navigation_home, false)
+                    navController.navigate(R.id.navigation_home)
+                    true
+                }
+                R.id.navigation_camera -> {
+                    navController.popBackStack(R.id.navigation_camera, false)
+                    navController.navigate(R.id.navigation_camera)
+                    true
+                }
+                R.id.navigation_drugs -> {
+                    navController.popBackStack(R.id.navigation_drugs, false)
+                    navController.navigate(R.id.navigation_drugs)
+                    true
+                }
+                R.id.navigation_profile -> {
+                    navController.popBackStack(R.id.navigation_profile, false)
+                    navController.navigate(R.id.navigation_profile)
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    override fun onNewIntent(intent: android.content.Intent) {
         super.onNewIntent(intent)
         val navigateTo = intent.getStringExtra("navigate_to")
         if (navigateTo == "home") {
-            val navHostFragment =
-                supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-            val navController = navHostFragment.navController
             navController.popBackStack(R.id.navigation_home, false)
             navController.navigate(R.id.navigation_home)
         }
     }
-
-
 }
-
