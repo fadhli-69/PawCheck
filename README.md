@@ -8,18 +8,23 @@ PawCheck: Advanced Eye Scan Disease Detection Technology for Easier Health Check
 ##  Tools yang Digunakan
 -  Android Studio
 
-## Features of the App
+## Features of the App  
 - **Splash Screen**
 The introductory screen displayed when the app is launched.
+
 - **Welcome Screen**
 A brief overview or introduction to the app's functionalities.
-- **Authentication System**  
+
+- **Authentication System**  (Firebase Auth)
 
   - **Login**: Users can securely log in using their email and password to access the application. 
  
   - **Sign Up**: Enables users to register independently for a personalized account.  
 
-  - **Logout**: Allows users to securely log out of their accounts.
+  - **Logout**: Allows users to securely log out of their accounts.  
+
+- **Edit Profile Name** (Firestore Database)
+  - Allows users to edit their profile name in firestore and local (room)
 
 - **Home**  
 The main screen displayed upon successful login, serving as the starting point for navigation.
