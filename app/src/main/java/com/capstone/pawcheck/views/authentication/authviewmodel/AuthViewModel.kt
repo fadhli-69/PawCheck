@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.capstone.pawcheck.data.local.entity.UserProfile
+import com.capstone.pawcheck.data.local.entity.UserEntity
 import com.capstone.pawcheck.data.repository.UserRepository
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -158,7 +158,7 @@ class AuthViewModel @Inject constructor(
                 if (document.exists()) {
                     val name = document.getString("name") ?: "Unknown"
                     val email = document.getString("email") ?: "Unknown"
-                    val userProfile = UserProfile(userId, name, email)
+                    val userProfile = UserEntity(userId, name, email)
 
                     // Save the profile to Room
                     userRepository.saveUserProfile(userProfile)
@@ -190,7 +190,7 @@ class AuthViewModel @Inject constructor(
                     .await()
 
                 // Update local Room cache
-                val updatedProfile = UserProfile(userId, newName, firebaseAuth.currentUser?.email ?: "")
+                val updatedProfile = UserEntity(userId, newName, firebaseAuth.currentUser?.email ?: "")
                 userRepository.saveUserProfile(updatedProfile)
 
                 _updateProfileState.value = Resource.Success(true)

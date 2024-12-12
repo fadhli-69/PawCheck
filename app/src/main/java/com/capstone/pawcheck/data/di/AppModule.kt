@@ -3,7 +3,11 @@ package com.capstone.pawcheck.data.di
 import android.app.Application
 import androidx.room.Room
 import com.capstone.pawcheck.data.local.room.AppDatabase
+import com.capstone.pawcheck.data.local.room.ArticleDao
 import com.capstone.pawcheck.data.local.room.UserProfileDao
+import com.capstone.pawcheck.data.remote.connect.ApiConfig
+import com.capstone.pawcheck.data.remote.connect.ApiService
+import com.capstone.pawcheck.data.repository.ArticleRepository
 import com.capstone.pawcheck.data.repository.UserRepository
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -41,7 +45,25 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideArticleDao(db: AppDatabase): ArticleDao {
+        return db.articleDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideApiService(): ApiService {
+        return ApiConfig.getApiService()
+    }
+
+    @Provides
+    @Singleton
     fun provideUserRepository(userProfileDao: UserProfileDao): UserRepository {
         return UserRepository(userProfileDao)
+    }
+
+    @Provides
+    @Singleton
+    fun provideArticleRepository(apiService: ApiService, articleDao: ArticleDao): ArticleRepository {
+        return ArticleRepository(apiService, articleDao)
     }
 }

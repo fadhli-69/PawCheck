@@ -4,14 +4,19 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.capstone.pawcheck.data.local.entity.ArticleEntity
 import com.capstone.pawcheck.data.repository.ArticleRepository
-import com.capstone.pawcheck.data.remote.response.ResponseArticle
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import java.io.IOException
+import javax.inject.Inject
 
-class HomeViewModel(private val repository: ArticleRepository) : ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(
+    private val repository: ArticleRepository
+) : ViewModel() {
 
-    private val _articles = MutableLiveData<ResponseArticle>()
-    val articles: LiveData<ResponseArticle> get() = _articles
+    val articles: LiveData<List<ArticleEntity>> = repository.localArticles
 
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> get() = _error
@@ -19,10 +24,11 @@ class HomeViewModel(private val repository: ArticleRepository) : ViewModel() {
     fun fetchArticles() {
         viewModelScope.launch {
             try {
-                val response = repository.getArticles()
-                _articles.postValue(response)
+                repository.fetchArticlesFromApi()
+            } catch (e: IOException) {
+                _error.postValue(e.message ?: "No Internet Connection")
             } catch (e: Exception) {
-                _error.postValue(e.message)
+                _error.postValue("An unknown error occurred")
             }
         }
     }
