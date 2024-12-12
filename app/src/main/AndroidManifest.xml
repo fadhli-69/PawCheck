@@ -37,7 +37,7 @@
             android:name=".views.result.ScanResultActivity"
             android:exported="false" />
         <activity
-            android:name=".views.homepage.ArticleActivity"
+            android:name=".views.homepage.DetailArticleActivity"
             android:exported="false" />
         <activity
             android:name=".views.authentication.register.RegisterActivity"

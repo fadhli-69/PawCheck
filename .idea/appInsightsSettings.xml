@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.capstone.pawcheck" />
-                  <option name="mobileSdkAppId" value="1:575687325847:android:953b19ec149f0bd14f91d2" />
-                  <option name="projectId" value="pawcheck-3a68e" />
-                  <option name="projectNumber" value="575687325847" />
+                  <option name="mobileSdkAppId" value="1:669878879963:android:dfae74a995b6679fea6efe" />
+                  <option name="projectId" value="pawcheck-b856f" />
+                  <option name="projectNumber" value="669878879963" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
