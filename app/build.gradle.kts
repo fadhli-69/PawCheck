@@ -56,6 +56,11 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
+    // Testing Libraries
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
     // ViewPager2
     implementation(libs.androidx.viewpager2)
 
@@ -68,10 +73,13 @@ dependencies {
 
     // Dependency Injection (Hilt)
     implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    // TensorFlow Lite
     implementation(libs.tensorflow.lite.support)
     implementation(libs.tensorflow.lite.metadata)
     implementation(libs.tensorflow.lite.gpu)
-    ksp(libs.hilt.compiler)
+    implementation(libs.tensorflow.lite.task.vision)
 
     // Networking (Retrofit)
     implementation(libs.retrofit)
@@ -97,24 +105,13 @@ dependencies {
     // UI Components
     implementation(libs.circleimageview)
 
-    // Testing Libraries
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-
-    // Tensorflow Lite
-    implementation(libs.tensorflow.lite.support)
-    implementation(libs.tensorflow.lite.metadata)
-    implementation(libs.tensorflow.lite.task.vision)
-
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.google.firebase.auth.ktx)
     implementation(libs.google.firebase.firestore.ktx)
 
+    // Kotlin Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.play.services)
-    implementation(libs.tasks.vision)
-
 }
