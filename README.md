@@ -8,6 +8,8 @@ PawCheck: Advanced Eye Scan Disease Detection Technology for Easier Health Check
 ##  Tools yang Digunakan
 -  Android Studio
 
+## Cara Setup Firebase [klik disini](https://firebase.google.com/docs/android/setup?hl=id)
+
 ## Features of the App  
 - **Splash Screen**
 The introductory screen displayed when the app is launched.
