@@ -12,9 +12,6 @@ PawCheck: Advanced Eye Scan Disease Detection Technology for Easier Health Check
 - **Splash Screen**
 The introductory screen displayed when the app is launched.
 
-- **Welcome Screen**
-A brief overview or introduction to the app's functionalities.
-
 - **Authentication System**  (Firebase Auth)
 
   - **Login**: Users can securely log in using their email and password to access the application. 
