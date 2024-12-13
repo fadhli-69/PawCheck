@@ -2,25 +2,37 @@
 
 PawCheck: Advanced Eye Scan Disease Detection Technology for Easier Health Checks
 
-##  Fitur Utama
-- Memeriksa gejala penyakit pada anjing dengan AI Machine Learning
+## Main Features
+- Checking symptoms of disease in dogs with AI Machine Learning
+- Displays news articles related to dogs
 
-##  Tools yang Digunakan
--  Android Studio
+## Tools Used
+- Android Studio
+- Firebase: Backend for authentication and data storage.
+- Room Database: For storing data offline.
 
-## Cara Setup Firebase [klik disini](https://firebase.google.com/docs/android/setup?hl=id)
+## Installation Guide
+- Clone repository [https://github.com/PawCheck/Android](https://github.com/PawCheck/Android)
+- Open the project in Android Studio.
+- Follow the [Firebase setup](https://firebase.google.com/docs/android/setup?hl=en).  
+ ```
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.google.firebase.auth.ktx)
+    implementation(libs.google.firebase.firestore.ktx)
+```
+- Run the application on the emulator or Android device.
 
-## Features of the App  
-- **Splash Screen**
+## Features in the App
+- **Splash Screen**  
 The introductory screen displayed when the app is launched.
 
-- **Authentication System**  (Firebase Auth)
+- **Authentication System** (Firebase Auth)
 
-  - **Login**: Users can securely log in using their email and password to access the application. 
- 
-  - **Sign Up**: Enables users to register independently for a personalized account.  
+  - **Login**: Users can securely log in using their email and password to access the application.
 
-  - **Logout**: Allows users to securely log out of their accounts.  
+  - **Sign Up**: Enables users to register independently for a personalized account.
+
+  - **Logout**: Allows users to securely log out of their accounts.
 
 - **Edit Profile Name** (Firestore Database)
   - Allows users to edit their profile name in firestore and local (room)
@@ -35,7 +47,7 @@ Provides functionality to scan and analyze a dog's eyes for potential health iss
 Displays the outcomes or diagnosis from the dog's eye scan.
 
 - **Pet Health Articles**  
-  - Provides educational articles about pet health.  
+  - Provides educational articles about pet health.
   - Includes an Offline Mode for accessing articles even without an internet connection (using Room database).
 
 - **Drug Products**  
@@ -47,4 +59,12 @@ Displays the user's information and allows updates to personal details in offlin
 - **Settings**  
 Theme Settings: Users can customize the app's theme (light or dark mode).
 
-
+## **Dependencies**  
+- Firebase Authentication
+- Firebase Firestore
+- Room Database
+- TensorFlow Lite (AI/ML Kit)
+- Retrofit (Networking)
+- Glide (Image Loading)
+- CameraX (Camera API)
+- Hilt (Dependency Injection)  
