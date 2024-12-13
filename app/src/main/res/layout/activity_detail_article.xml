@@ -66,7 +66,6 @@
             android:layout_marginEnd="20dp"
             android:text="@string/article_name"
             android:justificationMode="inter_word"
-            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

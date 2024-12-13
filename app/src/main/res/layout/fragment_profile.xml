@@ -34,7 +34,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="@string/username"
-                android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/ivProfile"
@@ -49,7 +48,8 @@
                 android:src="@drawable/ic_settings"
                 android:contentDescription="@string/setting_button"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/icon" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnEditProfile"
@@ -57,7 +57,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="96dp"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="#4CAF50"
                 android:text="@string/edit_profile"
                 app:cornerRadius="8dp"
                 app:layout_constraintStart_toStartOf="@id/ivProfile"

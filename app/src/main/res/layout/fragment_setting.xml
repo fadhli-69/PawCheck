@@ -32,7 +32,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/settings"
-        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/backButton"
@@ -45,7 +44,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/general"
-        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="24dp"
@@ -97,7 +95,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="@string/log_out"
-                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:gravity="center_vertical" />
             </LinearLayout>
@@ -109,7 +106,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/theme"
-        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="24dp"
@@ -138,7 +134,7 @@
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/ic_dark_mode"
+                android:src="@drawable/ic_darkmode"
                 android:contentDescription="@string/dark_mode_icon"
                 android:layout_marginStart="10dp" />
 

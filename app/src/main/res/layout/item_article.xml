@@ -9,7 +9,6 @@
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
     android:layout_marginBottom="10dp"
-    card_view:cardBackgroundColor="@android:color/white"
     android:layout_gravity="center"
     card_view:cardElevation="4dp">
 
@@ -50,6 +49,7 @@
             android:contentDescription="@string/article_title_desc"
             android:fontFamily="@font/poppins_bold"
             android:text="@string/article_name"
+            android:textColor="@color/black"
             android:justificationMode="inter_word"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -65,6 +65,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvArticleName"
             android:text="@string/article_description"
+            android:textColor="@color/black"
             android:justificationMode="inter_word"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
