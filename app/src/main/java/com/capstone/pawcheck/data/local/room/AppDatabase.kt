@@ -8,7 +8,7 @@ import com.capstone.pawcheck.data.local.entity.UserEntity
 @Database(
     entities = [
         ArticleEntity::class,
-        UserEntity::class  // Add this line
+        UserEntity::class
     ],
     version = 2,
     exportSchema = false
