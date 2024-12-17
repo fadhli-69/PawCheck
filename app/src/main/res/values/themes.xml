@@ -51,6 +51,15 @@
 
     <style name="Theme.PawCheck" parent="Base.Theme.PawCheck" />
 
+    <style name="FullscreenTheme" parent="Base.Theme.PawCheck">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
     <!--Image Corner Round-->
     <style name="ShapeAppearanceOverlay.RoundedImageView.8dp" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>

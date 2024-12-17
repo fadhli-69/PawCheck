@@ -3,17 +3,15 @@ package com.capstone.pawcheck.views.authentication.login
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.view.WindowInsets
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityOptionsCompat
+import androidx.lifecycle.lifecycleScope
 import com.capstone.pawcheck.R
 import com.capstone.pawcheck.data.preferences.SettingPreferences
 import com.capstone.pawcheck.databinding.ActivityLoginBinding
@@ -23,6 +21,7 @@ import com.capstone.pawcheck.views.authentication.authviewmodel.Resource
 import com.capstone.pawcheck.views.authentication.register.RegisterActivity
 import com.capstone.pawcheck.views.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
@@ -32,26 +31,28 @@ class LoginActivity : AppCompatActivity() {
     private val authViewModel: AuthViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val settingPreferences = SettingPreferences(this)
+        setupTheme()
         super.onCreate(savedInstanceState)
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val isDarkMode = runBlocking {
-            settingPreferences.getThemeSetting()
-        }
-
-        if (isDarkMode) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-
-        setupView()
         setupOnBackPressed()
         setupAnimations()
         setupListeners()
         observeLoginState()
+    }
+
+    private fun setupTheme() {
+        val settingPreferences = SettingPreferences(this)
+        lifecycleScope.launch {
+            val isDarkMode = settingPreferences.getThemeSetting()
+            if (isDarkMode) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
     }
 
     private fun setupListeners() {
@@ -92,19 +93,6 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    private fun setupView() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
-        supportActionBar?.hide()
     }
 
     private fun validateInput(email: String, password: String): Boolean {
@@ -171,5 +159,23 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             }
         })
+    }
+
+    private fun resetUIState() {
+        listOf(
+            binding.topBar,
+            binding.welcomeText,
+            binding.signInToYourAccount,
+            binding.tfEmail,
+            binding.tfPassword,
+            binding.btnLogin,
+            binding.signUpText
+        ).forEach { it.alpha = 0f }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        resetUIState()
+        setupAnimations()
     }
 }

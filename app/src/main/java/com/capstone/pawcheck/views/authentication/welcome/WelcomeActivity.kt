@@ -4,21 +4,20 @@ import android.content.Intent
 import android.os.Bundle
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.os.Build
 import android.util.Log
 import android.view.View
-import android.view.WindowInsets
-import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityOptionsCompat
+import androidx.lifecycle.lifecycleScope
 import com.capstone.pawcheck.data.preferences.SettingPreferences
 import com.capstone.pawcheck.databinding.ActivityWelcomeBinding
 import com.capstone.pawcheck.views.authentication.authviewmodel.AuthViewModel
 import com.capstone.pawcheck.views.authentication.login.LoginActivity
 import com.capstone.pawcheck.views.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
@@ -27,25 +26,27 @@ class WelcomeActivity : AppCompatActivity() {
     private val authViewModel: AuthViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val settingPreferences = SettingPreferences(this)
+        setupTheme()
         super.onCreate(savedInstanceState)
+
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val isDarkMode = runBlocking {
-            settingPreferences.getThemeSetting()
-        }
-
-        if (isDarkMode) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-
-        setupView()
         playAnimation()
         observeAuthState()
         authViewModel.checkLoginStatusWithDelay()
+    }
+
+    private fun setupTheme() {
+        val settingPreferences = SettingPreferences(this)
+        lifecycleScope.launch {
+            val isDarkMode = settingPreferences.getThemeSetting()
+            if (isDarkMode) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
     }
 
     private fun observeAuthState() {
@@ -56,19 +57,6 @@ class WelcomeActivity : AppCompatActivity() {
                 null -> Log.d("WelcomeActivity", "Checking user login status...")
             }
         }
-    }
-
-    private fun setupView() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
-        supportActionBar?.hide()
     }
 
     private fun navigateToMainActivity() {
